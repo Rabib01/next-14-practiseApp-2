@@ -1,7 +1,9 @@
 import comments from "@/app/data/comments";
+import { redirect } from "next/navigation";
 
 export async function GET(_request, { params }) {
   const commentId = params.id;
+  if (parseInt(commentId) > comments.length) redirect("/api/comments");
   const commentToEdit = comments.find(
     (thatComment) => thatComment.id === parseInt(commentId),
   );

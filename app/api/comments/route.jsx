@@ -1,6 +1,18 @@
 import comments from "@/app/data/comments";
 
-export async function GET() {
+export async function GET(request) {
+  // to work with search params
+  const searchParams = request.nextUrl.searchParams;
+  const query = searchParams.get("query");
+
+  if (query) {
+    const filteredComments = comments.filter((eachComment) =>
+      eachComment.text.toLowerCase().includes(query),
+    );
+    return Response.json(filteredComments);
+  }
+
+  // this takes us to a url with all the comments
   return Response.json(comments);
 }
 
