@@ -36,6 +36,14 @@
    *
    */
 }
+
+{
+  /**
+     * CORS (Cross-Origin Resource Sharing) is a browser security mechanism that controls whether a website can request resources from a different origin (domain, protocol, or port).
+       The server uses HTTP headers to specify which external origins are allowed to access its resources.
+     */
+}
+
 import { NextResponse } from "next/server";
 
 // This function can be marked `async` if using `await` inside
@@ -44,6 +52,6 @@ export function middleware(request) {
 }
 
 // // See "Matching Paths" below to learn more
-// export const config = {
-//   matcher: "/about/:path*",
-// };
+export const config = {
+  matcher: "/about/:path*",
+};
