@@ -57,7 +57,7 @@ export const config = {
 };
 
 {
-  /**
+  /** middleware code for internationalization and different languages that I donot want to understand right now  !
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import { NextResponse } from "next/server";
